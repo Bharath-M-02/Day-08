@@ -1,0 +1,166 @@
+Day 8
+
+3. Write a “person” class to hold all the details.
+
+Code:
+
+class Person {
+  constructor(FirstName, LastName) {
+    this.firstName = FirstName;
+    this.lastName = LastName;
+  }
+
+  sex(Gender) {
+    this.gender = Gender;
+  }
+
+  age(Num) {
+    this.num = Num;
+  }
+
+  contactNumber(ConNum) {
+    this.conNum = ConNum;
+  }
+
+  mailID(Mail) {
+    this.mail = Mail;
+  }
+
+  education(Qualification) {
+    this.qualification = Qualification;
+  }
+
+  profession(Pro) {
+    this.pro = Pro;
+  }
+
+  showDetails() {
+    console.log(`
+Name: ${this.firstName} ${this.lastName},
+Sex: ${this.gender},
+Age: ${this.num},
+Contact Number: ${this.conNum},
+Mail ID: ${this.mail},
+Educational Qualification: ${this.qualification},
+Profession: ${this.pro}
+
+`);
+  }
+}
+
+let bharath = new Person("Bharath", "M");
+bharath.sex("Male");
+bharath.age(19);
+bharath.contactNumber("1234567890");
+bharath.mailID("bharath@gmail.com");
+bharath.education("2nd PUC");
+bharath.profession("Student");
+bharath.showDetails();
+
+let suresh = new Person("Suresh", "S");
+suresh.sex("Male");
+suresh.age(25);
+suresh.contactNumber("1234567890");
+suresh.mailID("suresh@gmail.com");
+suresh.education("B.Tech IT");
+suresh.profession("IT Staff");
+suresh.showDetails();
+
+Output:
+
+Name: Bharath M,
+Sex: Male,
+Age: 19,
+Contact Number: 1234567890,
+Mail ID: bharath@gmail.com,
+Educational Qualification: 2nd PUC,
+Profession: Student
+
+Name: Suresh S,
+Sex: Male,
+Age: 25,
+Contact Number: 1234567890,
+Mail ID: suresh@gmail.com,
+Educational Qualification: B.Tech IT,
+Profession: IT Staff
+
+4. Write a class to calculate Uber price.
+
+Code:
+
+class Uber {
+  uberAuto(km) {
+    //Base Fare = 40/-
+    //Charge Per Minute = 1/-
+    //Charge Per km = 14.8/-
+    let autoBaseFare = 40;
+    let autoRideTimeCharge = 1;
+    let autoCalc = autoBaseFare + autoRideTimeCharge * 1 + km * 14.8;
+    console.log(
+      `You have choosen AUTO and approximate cost of your ride is ${Math.trunc(
+        autoCalc
+      )}/-`
+    );
+  }
+
+  uberCab(km) {
+    //Base Fare = 45/-
+    //Charge Per Minute = 1.5/-
+    //Charge Per km = 20/-
+    let cabBaseFare = 45;
+    let cabRideTimeCharge = 1.5;
+    let cabCalc = cabBaseFare + cabRideTimeCharge * 1.5 + km * 20;
+    console.log(
+      `You have choosen CAB and approximate cost of your ride is ${Math.trunc(
+        cabCalc
+      )}/-`
+    );
+  }
+
+  uberPremium(km) {
+    //Base Fare = 50/-
+    //Charge Per Minute = 2/-
+    //Charge Per km = 25/-
+    let premiumBaseFare = 50;
+    let premiumRideTimeCharge = 2;
+    let premiumCalc = premiumBaseFare + premiumRideTimeCharge * 2 + km * 25;
+    console.log(
+      `You have choosen PREMIUM CAB and approximate cost of your ride is ${Math.trunc(
+        premiumCalc
+      )}/-`
+    );
+  }
+
+  uberXL(km) {
+    //Base Fare = 60/-
+    //Charge Per Minute = 3/-
+    //Charge Per km = 35/-
+    let XLBaseFare = 60;
+    let XLRideTimeCharge = 3;
+    let XLCalc = XLBaseFare + XLRideTimeCharge * 3 + km * 35;
+    console.log(
+      `You have choosen SUV CAB and approximate cost of your ride is ${Math.trunc(
+        XLCalc
+      )}/-`
+    );
+  }
+}
+
+let auto = new Uber();
+auto.uberAuto(20);
+
+let cab = new Uber();
+cab.uberCab(20);
+
+let premium = new Uber();
+premium.uberPremium(20);
+
+let XL = new Uber();
+XL.uberXL(20);
+
+Output:
+
+You have choosen AUTO and approximate cost of your ride is 337/-
+You have choosen CAB and approximate cost of your ride is 447/-
+You have choosen PREMIUM CAB and approximate cost of your ride is 554/-
+You have choosen SUV CAB and approximate cost of your ride is 769/-
